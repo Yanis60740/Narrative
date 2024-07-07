@@ -1,0 +1,18 @@
+@import "../css/variables.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+a{
+    font-family: "Inter";
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
