@@ -30,8 +30,8 @@
         <div class="navmenu__rightContent__link"
         v-for="(item, index) in listRight" 
           :key="index" 
-          :ref="'animlink' + index">
-          <div class="navmenu__rightContent__link__box" :ref="'animlink' + index">
+          :ref="'animmenu' + index">
+          <div class="navmenu__rightContent__link__box" :ref="'animmenu' + index">
             <span class="navmenu__rightContent__link__title">
               {{item.title}}
             </span>
@@ -104,13 +104,17 @@ export default {
           this.$refs.nav,
           { maxHeight: "130px" },
           { maxHeight: "1000vh", duration: this.duration, ease: "power3.inOut" },
-          
         )
-        .fromTo(
-          [this.$refs.nav.querySelectorAll('.navmenu__rightContent__link__box, .menu__box')],
-          { translateY: "92%" },
-          { translateY: "0%", stagger: 0.2, duration: this.duration, ease: "power3.inOut" }
-        );
+        Object.keys(this.$refs).forEach(ref => {
+          if (ref.startsWith('animmenu')) {
+            this.tl.fromTo(
+              this.$refs[ref],
+              { translateY: "92%", delay: 0.2 },
+              { translateY: "0%", delay: 0, duration: this.animMenuDuration, ease: "power1.out" },
+               // "<" synchronise les animations sans décalage
+            );
+          }
+        });
     },
     onclickMenu() {
       if (this.isOpened) {
