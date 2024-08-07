@@ -127,15 +127,15 @@ export default {
     hoverSun() {
       gsap.fromTo(
         this.$refs.sun,
-        { scale: 1.1 },
-        { scale: 1, duration: this.duration, ease: "power2.out" }
+        { scale: 1 },
+        { scale: 1.1, duration: this.duration, ease: "power2.out" }
       );
     },
     unhoverSun() {
       gsap.fromTo(
         this.$refs.sun,
-        { scale: 1 },
-        { scale: 1.1, duration: this.duration, ease: "power2.out" }
+        { scale: 1.1 },
+        { scale: 1, duration: this.duration, ease: "power2.out" }
       );
     }
   }

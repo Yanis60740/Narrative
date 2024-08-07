@@ -1,17 +1,17 @@
 <template>
   <NavBar/>
-  <Title/>
+  <HeroBanner/>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue'
-import Title from './components/Title.vue'
+import HeroBanner from './components/HeroBanner.vue'
 
 export default {
   name: 'App',
   components: {
     NavBar,
-    Title
+    HeroBanner
   }
 }
 </script>
