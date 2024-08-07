@@ -1,14 +1,17 @@
 <template>
   <NavBar/>
+  <Title/>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue'
+import Title from './components/Title.vue'
 
 export default {
   name: 'App',
   components: {
-    NavBar
+    NavBar,
+    Title
   }
 }
 </script>

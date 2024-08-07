@@ -102,15 +102,15 @@ export default {
         )
         .fromTo(
           this.$refs.nav,
-          { maxHeight: "130px" },
-          { maxHeight: "1000vh", duration: this.duration, ease: "power3.inOut" },
+          { maxHeight: "0px" },
+          { maxHeight: "1000vh", padding: "32px 0 0 0", duration: this.duration, ease: "power3.inOut" },
         )
         Object.keys(this.$refs).forEach(ref => {
           if (ref.startsWith('animmenu')) {
             this.tl.fromTo(
               this.$refs[ref],
-              { translateY: "92%", delay: 0.2 },
-              { translateY: "0%", delay: 0, duration: this.animMenuDuration, ease: "power1.out" },
+              { translateY: "92%", delay: 0.1, opacity: 0 },
+              { translateY: "0%", delay: 0, opacity: 1, duration: this.animMenuDuration, ease: "power1.out" },
                // "<" synchronise les animations sans décalage
             );
           }
@@ -151,16 +151,12 @@ export default {
   flex-direction: column;
   padding: 0px 32px;
   box-sizing: border-box;
-  gap: 32px;
   font-family: "Inter";
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: -.02em;
   line-height: 1.2em;
-  // z-index: 10;
-  
   overflow: hidden;
-  background-color: yellowgreen
 }
 
 .navbar{
@@ -243,8 +239,10 @@ export default {
 .navmenu{
   display: flex;
   height: min-content;
-  // z-index: 2;
   flex: 1 0 0px;
+  background: white;
+  z-index: 2;
+  box-sizing: "border-box",
   &__leftContent{
     display: flex;
     flex-direction: column;

@@ -1,7 +1,7 @@
 <template>
     <div class="animSubtitle"  @mouseover="hover" @mouseleave="unhover">
-        <span class="firstSpan" ref="firstSp">{{ text }}</span>
-        <span class="secondSpan" ref="secondSp">{{ text }}</span>
+        <p class="firstSpan" ref="firstSp">{{ text }}</p>
+        <p class="secondSpan" ref="secondSp">{{ text }}</p>
     </div>
   </template>
   
