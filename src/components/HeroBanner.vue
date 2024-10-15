@@ -43,14 +43,18 @@
     </div>
   </div>
   <div class="videoContainer">
-    <div class="videoContainer__box">
+    
+    <div class="videoContainer__box" >
       <div class="videoContainer__box__anim">
+        <CustomCursor ref="customCursor" />
         <video
           src="/video/heroBanner.mp4"
           loop=""
           muted=""
           playsinline=""
           autoplay
+          @mouseenter="onVideoEnter"
+          @mouseleave="onVideoLeave"
         ></video>
       </div>
     </div>
@@ -59,12 +63,14 @@
 
 <script>
 import AnimSubtitle from "./AnimSubtitle.vue";
+import CustomCursor from './CustomCursor.vue';
 import gsap from "gsap";
 
 export default {
   name: "HeroBanner",
   components: {
     AnimSubtitle,
+    CustomCursor
   },
   data() {
     return {
@@ -109,6 +115,12 @@ export default {
         ease: "power1.out",
       });
     },
+    onVideoEnter() {
+      this.$refs.customCursor.setCursorText('PLAY'); // Afficher un texte dans le curseur au survol de la vidéo
+    },
+    onVideoLeave() {
+      this.$refs.customCursor.resetCursorText(); // Réinitialiser le texte en quittant la vidéo
+    }
   },
 };
 </script>
@@ -125,23 +137,21 @@ export default {
   justify-content: center;
   overflow: hidden;
   padding: 5px 32px 0;
-  position: absolute;
+  // position: absolute;
   width: 100%;
   left: 0;
   top: 73px;
-
+  font-family: $inter;
   &__title {
     position: relative;
     display: flex;
     cursor: default;
     white-space: pre;
-    font-family: "Inter-Medium", "Inter", "Inter Placeholder", sans-serif;
     color: black;
     font-size: 124px;
     font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1em;
-
     &__letterContainer {
       position: relative;
     }
@@ -272,9 +282,9 @@ export default {
   overflow: hidden;
   padding: 24px 32px 39px;
   position: relative;
-  transform: perspective(1200px);
+  // transform: perspective(1200px);
   width: 100%;
-
+  font-family: $inter;
   &__box {
     cursor: pointer;
     flex: 1 0 0px;
@@ -286,13 +296,13 @@ export default {
     &__anim {
       flex: none;
       height: 100%;
-      left: calc(50.00000000000002% - 100% / 2);
+      // left: calc(50.00000000000002% - 100% / 2);
       position: absolute;
       top: 0;
       width: 100%;
 
       video {
-        cursor: auto;
+        cursor: none;
         width: 100%;
         height: 100%;
         border-radius: 0px;

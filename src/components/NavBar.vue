@@ -103,7 +103,7 @@ export default {
         .fromTo(
           this.$refs.nav,
           { maxHeight: "0px" },
-          { maxHeight: "1000vh", padding: "32px 0 0 0", duration: this.duration, ease: "power3.inOut" },
+          { maxHeight: "1000vh", padding: "32px 0 32px 0", duration: this.duration, ease: "power3.inOut" },
         )
         Object.keys(this.$refs).forEach(ref => {
           if (ref.startsWith('animmenu')) {
@@ -151,7 +151,7 @@ export default {
   flex-direction: column;
   padding: 0px 32px;
   box-sizing: border-box;
-  font-family: "Inter";
+  font-family: $inter;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: -.02em;
@@ -242,7 +242,11 @@ export default {
   flex: 1 0 0px;
   background: white;
   z-index: 2;
-  box-sizing: "border-box",
+  position: absolute;
+  width: 97%;
+  left: 32px;
+  top: 80px;
+  box-sizing: "border-box";
   &__leftContent{
     display: flex;
     flex-direction: column;

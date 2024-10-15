@@ -16,7 +16,7 @@
     name: "AnimMenu",
     props: {
         number: {
-            type: String,
+            type: Int16Array,
             required: true
         },
         name: {
