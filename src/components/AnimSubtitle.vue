@@ -1,7 +1,7 @@
 <template>
-    <div class="animSubtitle"  @mouseover="hover" @mouseleave="unhover">
+    <div class=animSubtitle  @mouseover="hover" @mouseleave="unhover">
         <p class="firstSpan" ref="firstSp">{{ text }}</p>
-        <p class="secondSpan" ref="secondSp">{{ text }}</p>
+        <p :class="['secondSpan', customClass]" ref="secondSp">{{ text }}</p>
     </div>
   </template>
   
@@ -13,7 +13,11 @@
         text: {
             type: String,
             required: true
-        }
+        },
+        customClass: {
+      type: String,
+      default: "",
+    },
     },
     data() {
       return {
@@ -71,7 +75,6 @@
 .secondSpan{
   position: absolute;
   transform: translateY(110%);
-  color: black;
   opacity: 0;
 }
 </style>

@@ -4,7 +4,7 @@
       <div class="animMenu__name">{{name}}</div>
       <div class="animMenu__arrow" >
         <div class="animMenu__arrow__box" >
-          <svg xmlns="http://www.w3.org/2000/svg" ref="animMenu" focusable="false" viewBox="0 0 24 24" color="var(--token-0819bdfd-ecdd-45ae-a012-dd02dc1d17eb, rgb(18, 18, 18))" style="user-select: none; width: 100%; height: 100%; display: inline-block; fill: var(--token-0819bdfd-ecdd-45ae-a012-dd02dc1d17eb, rgb(18, 18, 18)); flex-shrink: 0;"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" ref="animMenu" focusable="false" viewBox="0 0 24 24"  style="user-select: none; width: 100%; height: 100%; display: inline-block; fill: var(--primary-text); flex-shrink: 0;"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
         </div>
       </div>
     </div>
@@ -67,12 +67,11 @@
   letter-spacing: -0.02em;
   line-height: 1.2em;
   &__number{
-    color: #ebebeb;
+    color: var(--primary-number); ;
   }
   &__name{
     position: relative;
-    color: black;
-    background-color: white;
+    color: var(--primary-text);
   }
   &__arrow{
     position: relative;

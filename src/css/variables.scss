@@ -13,5 +13,28 @@ $small-size: 14px;
 $paragraph-size: 12px;
 
 
+
+$dark: rgb(18, 18, 18);
+$grey: rgb(235, 235, 235);
+$light: rgb(255, 255, 255);
+$numberD: rgb(18, 18, 18, 0.12);
+$numberL: rgb(255, 255, 255, 0.12);
+
+:root[data-theme='dark'] {
+    --primary-bg:#{$dark};
+    --primary-text: #{$light};
+    --primary-separator: #{$light};
+    --primary-number: #{$numberL};
+  }
+  :root[data-theme='light'] {
+    --primary-bg: #{$light};
+    --primary-text: #{$dark};
+    --primary-separator: #{$grey};
+    --primary-number: #{$numberD};
+  }
+
+
+
 $inter: "Inter", uppercase;
+
 $dela-gothic: 'Dela Gothic One', cursive;

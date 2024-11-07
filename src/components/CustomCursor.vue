@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import gsap from "gsap";
 export default {
   name: "CustomCursor",
   data() {
@@ -28,10 +29,13 @@ export default {
 
       const cursorWidth = cursor.offsetWidth;
       const cursorHeight = cursor.offsetHeight;
-      
-      // Ajuster la position pour centrer le curseur sur la souris
-      cursor.style.left = `${event.clientX - cursorWidth / 2}px`;
-      cursor.style.top = `${event.clientY - cursorHeight / 2}px`;
+
+      gsap.to(cursor, {
+        duration: 0.8,
+        x: event.clientX - cursorWidth / 2,
+        y: event.clientY - cursorHeight / 2,
+        ease: "power3.out",
+      });
     },
     setCursorText(text) {
       this.cursorText = text; // Change cursor text when hovering over elements
@@ -55,6 +59,8 @@ export default {
 /* Custom cursor styles */
 .custom-cursor {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -64,22 +70,17 @@ export default {
   justify-content: center;
   align-items: center;
   pointer-events: none;
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
   opacity: 0;
   visibility: hidden;
 }
 .custom-cursor.active {
   opacity: 1;
-  visibility: visible;  /* Lorsque la classe active est appliquée, le curseur devient visible */
+  visibility: visible; /* Lorsque la classe active est appliquée, le curseur devient visible */
 }
 
 .cursor-text {
   font-size: 12px;
   color: rgb(255, 255, 255);
   pointer-events: none; /* Prevent text from interfering with events */
-}
-.video:hover ~ .custom-cursor {
-  transform: scale(1.5); /* Enlarge the cursor when hovering over the video */
-  background-color: rgba(255, 255, 255, 0.9);
 }
 </style>
