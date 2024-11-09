@@ -94,7 +94,7 @@ export default {
   data() {
     return {
       duration: 0.4,
-      animMenuDuration: 0.2,
+      animMenuDuration: 0.4,
       listLeft: [
         { name: "HOME", url: "#" },
         { name: "ABOUT", url: "#" },
@@ -161,6 +161,8 @@ export default {
           "<"
         );
 
+        let isFirstAnim = true;
+
       Object.keys(this.$refs).forEach((ref) => {
         if (ref.startsWith("animmenu")) {
           this.tl.fromTo(
@@ -172,9 +174,10 @@ export default {
               opacity: 1,
               duration: this.animMenuDuration,
               ease: "power1.out",
-            }
-            // "<" synchronise les animations sans décalage
+              stagger: 0.1,
+            }, isFirstAnim ? "<-0.3" : "<0.25"
           );
+          isFirstAnim = false;
         }
       });
     },

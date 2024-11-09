@@ -1,4 +1,5 @@
 <template>
+  <LoadingScreen/>
   <NavBar/>
   <HeroBanner/>
   <AboutUs/>
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+import LoadingScreen from './components/LoadingScreen.vue'
 import NavBar from './components/NavBar.vue'
 import HeroBanner from './components/HeroBanner.vue'
 import AboutUs from './components/AboutUs.vue'
@@ -22,6 +24,7 @@ import FixedButton from './components/FixedButton.vue';
 export default {
   name: 'App',
   components: {
+    LoadingScreen,
     NavBar,
     HeroBanner,
     AboutUs,

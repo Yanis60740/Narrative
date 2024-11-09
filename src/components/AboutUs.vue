@@ -96,7 +96,7 @@ export default {
   padding: 0 32px;
   position: relative;
   opacity: 0;
-  .aboutUs__textContainer {
+  &__textContainer {
     flex: 1 0 0px;
     height: auto;
     position: relative;

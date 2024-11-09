@@ -67,7 +67,7 @@
   letter-spacing: -0.02em;
   line-height: 1.2em;
   &__number{
-    color: var(--primary-number); ;
+    color: var(--primary-opacity); ;
   }
   &__name{
     position: relative;

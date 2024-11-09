@@ -35,7 +35,7 @@ export default {
     font-size: 12px;
     letter-spacing: -0.02em;
     font-weight: 500;
-
+    z-index: 1;
     &__template {
         width: min-content;
         white-space: pre;
@@ -61,7 +61,7 @@ export default {
             text-decoration: none;
             width: min-content;
             will-change: var(--framer-will-change-override, transform);
-            z-index: 1;
+
             cursor: pointer;
             color: rgb(235, 235, 235);
 

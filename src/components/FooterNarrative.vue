@@ -119,7 +119,7 @@ export default {
     methods: {
         startCarouselFooter() {
             const carrouselWidth = document.querySelector(".footerNarrative__content__title__box__carrousel").offsetWidth;
-            console.log(carrouselWidth);
+            // const titleWidth = document.querySelector(".footerNarrative__content__title").offsetWidth;
             gsap.set(".footerNarrative__content__title__box__carrousel", {
                 x: (i) => -i * (carrouselWidth + 30),
                 right: -carrouselWidth,
@@ -265,16 +265,17 @@ export default {
 
         &__title {
             position: relative;
-            width: 100%;
+            // width: 100%;
             height: 203px;
             overflow: hidden;
-
+            transform: none;
             &__box {
                 padding: 10px 0;
                 position: relative;
                 box-sizing: border-box;
-                display: flex;
+                display: flex;transform: none;
                 &__carrousel {
+                    transform: none;
                     display: flex;
                     position: absolute;
                     font-size: 145px;
