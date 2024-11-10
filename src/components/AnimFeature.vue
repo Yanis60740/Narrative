@@ -1,6 +1,6 @@
 <template>
   <div class="animFeature" @mouseover="hover" @mouseleave="unhover">
-    <div class="animFeature__title">{{ title }}</div>
+    <div class="animFeature__title" ref="titleFeature">{{ title }}</div>
     <div class="animFeature__animation" ref="boxFeature">
       <div class="animFeature__animation__title" ref="feature">
         {{ feature }}
@@ -62,120 +62,147 @@ export default {
   },
   methods: {
     hover() {
-      this.tlEnter = gsap.timeline({ overwrite: "auto" });
-      this.tlEnter
-        .to(
-          this.$refs.boxFeature,
+      let responsive = gsap.matchMedia();
+      responsive.add("(min-width: 1200px)", () => {
+        this.tlEnter = gsap.timeline({ overwrite: "auto" });
+        this.tlEnter
+          .to(
+            this.$refs.boxFeature,
+            {
+              duration: this.duration,
+              ease: this.CustomEase,
+              height: "124px",
+            },
+            0.1
+          )
+          .to(
+            this.$refs.feature,
+            {
+              yPercent: -100,
+              duration: this.duration,
+              ease: this.CustomEase,
+            },
+            0.1
+          )
+          .to(
+            this.$refs.img1,
+            {
+              bottom: "0px",
+              duration: this.duration,
+              ease: this.CustomEase,
+            },
+            0.1
+          )
+          .to(
+            this.$refs.img2,
+            {
+              bottom: "0px",
+              duration: this.duration,
+              ease: this.CustomEase,
+            },
+            "<"
+          )
+          .to(
+            this.$refs.img3,
+            {
+              bottom: "0px",
+              duration: this.duration,
+              ease: this.CustomEase,
+            },
+            "<"
+          )
+          .to(
+            this.$refs.boxFeature,
+            {
+              duration: this.duration,
+              ease: this.CustomEase,
+              justifyContent: "flex-end",
+            },
+            0.3
+          );
+      });
+
+      responsive.add("(max-width: 1199px)", () => {
+        gsap.to(
+          this.$refs.titleFeature,
           {
+            xPercent: 10,
             duration: this.duration,
             ease: this.CustomEase,
-            height: "124px",
-          },
-          0.1
+          }
         )
-        .to(
-          this.$refs.feature,
-          {
-            yPercent: -100,
-            duration: this.duration,
-            ease: this.CustomEase,
-          },
-          0.1
-        )
-        .to(
-          this.$refs.img1,
-          {
-            bottom: "0px",
-            duration: this.duration,
-            ease: this.CustomEase,
-          },
-          0.1
-        )
-        .to(
-          this.$refs.img2,
-          {
-            bottom: "0px",
-            duration: this.duration,
-            ease: this.CustomEase,
-          },
-          "<"
-        )
-        .to(
-          this.$refs.img3,
-          {
-            bottom: "0px",
-            duration: this.duration,
-            ease: this.CustomEase,
-          },
-          "<"
-        )
-        .to(
-          this.$refs.boxFeature,
-          {
-            duration: this.duration,
-            ease: this.CustomEase,
-            justifyContent: "flex-end",
-          },
-          0.3
-        );
+      });
     },
     unhover() {
-      this.tlLeave = gsap.timeline();
-      this.tlLeave
-        .to(
-          this.$refs.img3,
+      let responsive = gsap.matchMedia();
+      responsive.add("(min-width: 1200px)", () => {
+        this.tlLeave = gsap.timeline();
+        this.tlLeave
+          .to(
+            this.$refs.img3,
+            {
+              bottom: "-270px",
+              duration: this.duration,
+              ease: this.CustomEase,
+            },
+            0.1
+          )
+          .to(
+            this.$refs.img2,
+            {
+              bottom: "-240px",
+              duration: this.duration,
+              ease: this.CustomEase,
+            },
+            "<"
+          )
+          .to(
+            this.$refs.img1,
+            {
+              bottom: "-174px",
+              duration: this.duration,
+              ease: this.CustomEase,
+            },
+            "<"
+          )
+          .to(
+            this.$refs.boxFeature,
+            {
+              duration: this.duration,
+              ease: this.CustomEase,
+              justifyContent: "flex-start",
+            },
+            0.4
+          )
+          .to(
+            this.$refs.feature,
+            {
+              yPercent: 0,
+              duration: this.duration,
+              ease: this.CustomEase,
+            },
+            0.1
+          )
+          .to(
+            this.$refs.boxFeature,
+            {
+              duration: this.duration,
+              ease: this.CustomEase,
+              height: "30px",
+            },
+            "<"
+          );
+      });
+      responsive.add("(max-width: 1199px)", () => {
+        gsap.to(
+          this.$refs.titleFeature,
           {
-            bottom: "-270px",
+            xPercent: 0,
             duration: this.duration,
             ease: this.CustomEase,
-          },
-          0.1
+          }
         )
-        .to(
-          this.$refs.img2,
-          {
-            bottom: "-240px",
-            duration: this.duration,
-            ease: this.CustomEase,
-          },
-          "<"
-        )
-        .to(
-          this.$refs.img1,
-          {
-            bottom: "-174px",
-            duration: this.duration,
-            ease: this.CustomEase,
-          },
-          "<"
-        )
-        .to(
-          this.$refs.boxFeature,
-          {
-            duration: this.duration,
-            ease: this.CustomEase,
-            justifyContent: "flex-start",
-          },
-          0.4
-        )
-        .to(
-          this.$refs.feature,
-          {
-            yPercent: 0,
-            duration: this.duration,
-            ease: this.CustomEase,
-          },
-          0.1
-        )
-        .to(
-          this.$refs.boxFeature,
-          {
-            duration: this.duration,
-            ease: this.CustomEase,
-            height: "30px",
-          },
-          "<"
-        );
+      });
     },
   },
 };

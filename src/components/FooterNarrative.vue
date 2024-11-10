@@ -110,7 +110,7 @@ export default {
     },
     data() {
     return {
-      carrouselWidth: null,
+      carrouselFooterWidth: null,
     };
   },
     mounted() {
@@ -118,18 +118,19 @@ export default {
     },
     methods: {
         startCarouselFooter() {
-            const carrouselWidth = document.querySelector(".footerNarrative__content__title__box__carrousel").offsetWidth;
+            this.carrouselFooterWidth = document.querySelector(".footerNarrative__content__title__box__carrousel").offsetWidth;
+            console.log(this.carrouselFooterWidth);
             // const titleWidth = document.querySelector(".footerNarrative__content__title").offsetWidth;
             gsap.set(".footerNarrative__content__title__box__carrousel", {
-                x: (i) => -i * (carrouselWidth + 30),
-                right: -carrouselWidth,
+                x: (i) => -i * (this.carrouselFooterWidth + 30),
+                right: -this.carrouselFooterWidth,
             });
             gsap.to(".footerNarrative__content__title__box__carrousel", {
-                duration: 10,
+                duration: 50,
                 ease: "none",
-                x: `-=` + ((carrouselWidth * 3) + 90), // Change this line to move in the opposite direction
+                x: `-=` + ((this.carrouselFooterWidth * 3) + 90), // Change this line to move in the opposite direction
                 modifiers: {
-                    x: gsap.utils.unitize(x => parseFloat(x) % ((carrouselWidth * 3) + 90)),
+                    x: gsap.utils.unitize(x => parseFloat(x) % ((this.carrouselFooterWidth * 3) + 90)),
                 },
                 repeat: -1
             });
@@ -264,18 +265,13 @@ export default {
         }
 
         &__title {
-            position: relative;
-            // width: 100%;
             height: 203px;
             overflow: hidden;
-            transform: none;
             &__box {
-                padding: 10px 0;
                 position: relative;
-                box-sizing: border-box;
-                display: flex;transform: none;
+                display: flex;
                 &__carrousel {
-                    transform: none;
+                    width: max-content;
                     display: flex;
                     position: absolute;
                     font-size: 145px;

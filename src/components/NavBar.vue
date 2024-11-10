@@ -133,7 +133,7 @@ export default {
       this.tl
         .to(this.$refs.nav, {
           maxHeight: this.containerHeight + "px",
-          padding: "32px 0",
+          padding: "32px 0px",
           duration: this.duration,
           ease: "power3.inOut",
         })
@@ -366,10 +366,9 @@ export default {
   z-index: 2;
   position: absolute;
   width: 97%;
-  left: 32px;
   top: 80px;
   box-sizing: "border-box";
-  padding: 32px 0;
+  padding: 32px 32px;
 
   &__leftContent {
     display: flex;

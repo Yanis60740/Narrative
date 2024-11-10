@@ -143,27 +143,24 @@ export default {
   }
 
   &__subtitle {
-    align-content: center;
     align-items: center;
     display: flex;
     gap: 48px;
     height: min-content;
     overflow: hidden;
+    font-family: "Inter-Medium", "Inter", "Inter Placeholder", sans-serif;
+    color: var(--primary-text);
+    font-size: $small-size;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    text-transform: uppercase;
     &__left {
       display: flex;
       flex: 2 0 0px;
       gap: 32px;
       height: min-content;
       overflow: hidden;
-        p {
-          font-family: "Inter-Medium", "Inter", "Inter Placeholder", sans-serif;
-          color: var(--primary-text);
-          font-size: $small-size;
-          font-weight: 500;
-          letter-spacing: -0.02em;
-          line-height: 1.2em;
-          text-transform: uppercase;
-        }
     }
 
     &__right {
