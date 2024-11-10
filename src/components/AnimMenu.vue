@@ -59,7 +59,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  width: min-content;
+  width: 81px;
   cursor: pointer;
   font-size: 64px;
   font-family: "Inter-Medium", "Inter", "Inter Placeholder", sans-serif;
@@ -67,7 +67,7 @@
   letter-spacing: -0.02em;
   line-height: 1.2em;
   &__number{
-    color: var(--primary-opacity); ;
+    color: var(--primary-opacity);
   }
   &__name{
     position: relative;

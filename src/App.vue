@@ -7,7 +7,6 @@
   <FeaturedWorks/>
   <CraftsSection/>
   <FooterNarrative/>
-  <FixedButton/>
 </template>
 
 <script>
@@ -19,7 +18,6 @@ import CapabilitiesOverview from './components/CapabilitiesOverview.vue'
 import FeaturedWorks from './components/FeaturedWorks.vue';
 import CraftsSection from './components/CraftsSection.vue';
 import FooterNarrative from './components/FooterNarrative.vue';
-import FixedButton from './components/FixedButton.vue';
 
 export default {
   name: 'App',
@@ -32,7 +30,6 @@ export default {
     FeaturedWorks,
     CraftsSection,
     FooterNarrative,
-    FixedButton,
   },
   provide() {
     return {
