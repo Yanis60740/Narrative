@@ -48,8 +48,7 @@ export default {
   },
 };
 </script>
-<!-- autoAlpha à la place de opacity // willchange -->
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style lang="scss" scoped>
 @import "../css/global.scss";
 .custom-cursor-container {

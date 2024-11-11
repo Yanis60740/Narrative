@@ -244,6 +244,10 @@ export default {
   .navmenu__rightContent{
     gap: 20px !important;
   }
+
+  .loadingScreen__container__box{
+    font-size: 30px !important;
+  }
   
 }
 </style>

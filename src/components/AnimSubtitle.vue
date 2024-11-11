@@ -27,14 +27,14 @@
     methods: {
       hover() {
         gsap.to(this.$refs.firstSp, {
-          translateY: "-110%",
+          yPercent: "-100",
           duration: this.duration,
           // delay: 1,
           opacity: 0,
           ease: "power3.inOut",
         });
         gsap.to(this.$refs.secondSp, {
-          translateY: "0%",
+          yPercent: "-100",
           duration: this.duration,
           opacity: 1,
           ease: "power3.inOut",
@@ -43,14 +43,14 @@
       },
       unhover() {
         gsap.to(this.$refs.firstSp, {
-          translateY: "0%",
+          yPercent: "0",
           duration: this.duration,
           // delay: 0.17,
           opacity: 1,
           ease: "power3.inOut",
         });
         gsap.to(this.$refs.secondSp, {
-          translateY: "110%",
+          yPercent: "0",
           duration: this.duration,
           // delay: 0.26,
           opacity: 0,
@@ -74,7 +74,7 @@
 }
 .secondSpan{
   position: absolute;
-  transform: translateY(110%);
+  transform: translateY(100%);
   opacity: 0;
 }
 </style>

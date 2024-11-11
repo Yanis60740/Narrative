@@ -120,7 +120,6 @@ export default {
         startCarouselFooter() {
             this.carrouselFooterWidth = document.querySelector(".footerNarrative__content__title__box__carrousel").offsetWidth;
             console.log(this.carrouselFooterWidth);
-            // const titleWidth = document.querySelector(".footerNarrative__content__title").offsetWidth;
             gsap.set(".footerNarrative__content__title__box__carrousel", {
                 x: (i) => -i * (this.carrouselFooterWidth + 30),
                 right: -this.carrouselFooterWidth,
@@ -128,7 +127,7 @@ export default {
             gsap.to(".footerNarrative__content__title__box__carrousel", {
                 duration: 50,
                 ease: "none",
-                x: `-=` + ((this.carrouselFooterWidth * 3) + 90), // Change this line to move in the opposite direction
+                x: `-=` + ((this.carrouselFooterWidth * 3) + 90),
                 modifiers: {
                     x: gsap.utils.unitize(x => parseFloat(x) % ((this.carrouselFooterWidth * 3) + 90)),
                 },

@@ -23,16 +23,10 @@ export default {
     data() {
         return {
             isLoading: true,
-            // tl : null,
         };
     },
     mounted() {
         this.animation();
-        // Simulate a load time (e.g., for testing)
-        // setTimeout(() => {
-        // this.isLoading = false;
-        // this.$emit("loaded"); // Notify the parent component
-        // }, 3000); // Adjust this timeout as needed
     },
     methods: {
         animation() {
@@ -112,7 +106,7 @@ export default {
 @import "../css/variables.scss";
 
 .loadingScreen {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -150,7 +144,6 @@ export default {
                 width: 0;
                 height: 4px;
                 position: absolute;
-                // top: calc(50.00000000000002% - 4px / 2);
                 background-color: var(--primary-text);
             }
         }
